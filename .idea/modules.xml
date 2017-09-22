@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Chapter 14 Programming Exercises/Chapter 14 Programming Exercises.iml" filepath="$PROJECT_DIR$/Chapter 14 Programming Exercises/Chapter 14 Programming Exercises.iml" />
       <module fileurl="file://$PROJECT_DIR$/cp2406_farrell8_ch14.iml" filepath="$PROJECT_DIR$/cp2406_farrell8_ch14.iml" />
     </modules>
   </component>
