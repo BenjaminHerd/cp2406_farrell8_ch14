@@ -10,6 +10,7 @@ public class JBookQuote extends JFrame {
     //Layout aspects
     JLabel label = new JLabel(" Jane Eyre: 'There was no possibility of taking a walk that day.'");
 
+
     //Set up for JFrame
     public JBookQuote(){
 
