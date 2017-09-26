@@ -4,6 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 public class FixDebugFourteen3 extends JFrame implements ItemListener
 {
+
    //UI components
    FlowLayout flow = new FlowLayout();
    JComboBox<String> pizzaBox = new JComboBox<String>();
@@ -39,6 +40,7 @@ public class FixDebugFourteen3 extends JFrame implements ItemListener
       JFrame frame = new FixDebugFourteen3();
       frame.setSize(200, 150);
       frame.setVisible(true);
+
    }
 
    @Override
