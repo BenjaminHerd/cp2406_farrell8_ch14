@@ -1,5 +1,5 @@
 /*
-Making a combobox to switch between different channels/Programs with corresponding descriptions
+Allow for combobox to be searched i.e. editable
  */
 
 //import statements
@@ -9,7 +9,7 @@ import java.awt.*;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
-public class JTVDownload extends JFrame implements ItemListener {
+public class JTVDownload2 extends JFrame implements ItemListener {
 
     //Layout for frame
     FlowLayout flow = new FlowLayout();
@@ -28,7 +28,7 @@ public class JTVDownload extends JFrame implements ItemListener {
 
 
     //Public function
-    public JTVDownload(){
+    public JTVDownload2(){
         //Title of Frame
         super("JTVDownload Guide");
         //Setting to exit on close
@@ -43,7 +43,10 @@ public class JTVDownload extends JFrame implements ItemListener {
         //For loop for doing so
         tvGuide.addItem("none");
         for (int x = 0; x < programs.length; ++x)
-           tvGuide.addItem(programs[x]);
+            tvGuide.addItem(programs[x]);
+
+        //Make combobox editable
+        tvGuide.setEditable(true);
 
         add(tvGuide);
         add(aLabel);
@@ -54,7 +57,7 @@ public class JTVDownload extends JFrame implements ItemListener {
     //Running application
     public static void main(String[] args) {
 
-        JFrame frame = new JTVDownload();
+        JFrame frame = new JTVDownload2();
         frame.setSize(400, 150);
         frame.setVisible(true);
 
@@ -66,10 +69,16 @@ public class JTVDownload extends JFrame implements ItemListener {
         //Get the place of the source in the list
         Object source = list.getSource();
         //If the source matches the item in the array, change the text field to show corresponding description
-        if (source == tvGuide){
+        if (source == tvGuide) {
             int channelNum = tvGuide.getSelectedIndex();
-            desriptionField.setText(channelDesciptions[channelNum]);
 
+            //Try, catch block to check text for relevant item in array
+            try {
+                desriptionField.setText(channelDesciptions[channelNum]);
+            }
+            catch (ArrayIndexOutOfBoundsException e){
+                desriptionField.setText("Sorry - Channel not found");
+            }
         }
     }
 
